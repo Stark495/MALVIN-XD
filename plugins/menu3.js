@@ -5,9 +5,9 @@ const {runtime} = require('../lib/functions')
 const axios = require('axios')
 
 malvin({
-    pattern: "menu2",
+    pattern: "menu3",
     alias: ["allmenu","fullmenu"],
-    use: '.menu2',
+    use: '.menu3',
     desc: "Show all bot commands",
     category: "menu",
     react: "📜",
@@ -353,7 +353,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         // Send audio
         await conn.sendMessage(from, {
-            audio: { url: 'https://github.com/XdKing2/MALVIN-DATA/raw/refs/heads/main/autovoice/intro.m4a' },
+            audio: fs.readFileSync('./autos/intro.m4a'),
             mimetype: 'audio/mp4',
             ptt: true
         }, { quoted: mek });
